@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_settings"
+    tools:context=".feature.app.settings.view.SettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="55dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_clearcache"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/arrow_back_black"
+                android:fontFamily="@font/sfproregular"
+                android:text="@string/back"
+                android:textAllCaps="false"
+                android:textColor="@color/transparent_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/btn_signout"
+        android:layout_width="351dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="41dp"
+        android:background="@drawable/btn_signout"
+        android:text="@string/sign_out"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/transparent_gray"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/muli"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_settings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fontFamily="@font/sfprosemibold"
+        android:paddingStart="@dimen/dime_15dp"
+        android:text="@string/settings"
+        android:paddingTop="10dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_goneMarginTop="@dimen/dime_30dp" />
+
+    <TextView
+        android:id="@+id/tv_clearcache"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/tv_style"
+        android:paddingStart="@dimen/dime_15dp"
+        android:text="@string/clear_cache"
+        android:paddingTop="@dimen/dime_10"
+        android:fontFamily="@font/muli"
+        app:layout_constraintBottom_toTopOf="@+id/tv_shareapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:drawableEndCompat="@drawable/arrow_settings" />
+
+    <TextView
+        android:id="@+id/tv_shareapp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tv_style"
+        android:fontFamily="@font/sfproregular"
+        android:paddingStart="@dimen/dime_15dp"
+        android:text="@string/share_the_app"
+        android:paddingTop="@dimen/dime_10"
+        app:layout_constraintBottom_toTopOf="@+id/tv_questions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_clearcache"
+        app:drawableEndCompat="@drawable/arrow_settings" />
+
+    <TextView
+        android:id="@+id/tv_questions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tv_style"
+        android:paddingStart="@dimen/dime_15dp"
+        android:text="@string/questions"
+        android:paddingTop="@dimen/dime_10"
+        android:fontFamily="@font/sfproregular"
+        app:layout_constraintBottom_toTopOf="@+id/tv_about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shareapp"
+        app:drawableEndCompat="@drawable/arrow_settings" />
+
+    <TextView
+        android:id="@+id/tv_about"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="367dp"
+        android:paddingLeft="@dimen/dime_15dp"
+        android:background="@drawable/tv_style"
+        android:text="@string/about"
+        android:paddingTop="@dimen/dime_10"
+        android:fontFamily="@font/sfproregular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_questions"
+        app:drawableEndCompat="@drawable/arrow_settings" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

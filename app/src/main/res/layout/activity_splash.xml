@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".feature.app.splash.view.SplashActivity">
+
+    <ImageView
+        android:id="@+id/decorationSplash"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/decoration_circles"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/decoration_shape">
+
+
+
+        <ImageView
+            android:id="@+id/iconSplash"
+            android:layout_width="120dp"
+            android:layout_height="142dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            app:srcCompat="@drawable/icon"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_marginTop="200dp"
+            style="@style/smallTextView1"
+            android:text="@string/most_popular_and_authoritative_source_for_movie_tv_and_celebrity_content"
+            android:padding="@dimen/dime_10"
+            android:textColor="@color/transparent"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

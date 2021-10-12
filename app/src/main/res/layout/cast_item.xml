@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dime_10"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:background="@color/colorCard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_cast"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_100"
+        android:layout_marginBottom="@dimen/dim_5"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:id="@+id/iv_cast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/amy_adams" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_cast_name"
+        style="@style/smallTextView"
+        android:text="@string/amy_adams" />
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    style="@style/corner_dialog"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tv_alert_title"
+        android:layout_width="match_parent"
+        android:text="@string/title"
+        android:padding="@dimen/dime_10"
+        android:textColor="@color/bg"
+        style="@style/smallTextView2"/>
+
+     <TextView
+            android:id="@+id/tv_alert_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/smallTextView1"
+            android:padding="@dimen/dime_10"
+            android:textColor="@color/bg"
+            android:text="@string/are_you_sure_to_do_whatever"/>
+
+
+        <LinearLayout
+            android:paddingTop="@dimen/dime_10"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dime_10"
+            android:layout_marginBottom="@dimen/dime_10"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_alert_cancel"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/dim_5"
+                android:fontFamily="@font/muli"
+                android:background="@drawable/btn_style_regular"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:layout_marginStart="@dimen/dime_10"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btn_alert_accept"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/btn_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dim_5"
+                android:fontFamily="@font/muli"
+                android:text="@string/accept"
+                android:layout_marginEnd="@dimen/dime_10"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+</LinearLayout>

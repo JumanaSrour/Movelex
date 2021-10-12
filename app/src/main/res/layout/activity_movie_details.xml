@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".feature.movie.movieDetails.view.MovieDetailsActivity">
+
+    <include
+        android:id="@+id/llProgressBarDetails"
+        android:visibility="gone"
+        layout="@layout/progress_bar"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleGravity="top"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="top"
+            app:titleEnabled="true"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_back"
+                app:layout_collapseMode="parallax" />
+
+
+
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_play"
+                android:src="@drawable/ic_baseline_play_arrow_24" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Day">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/movie_title"
+                        android:layout_width="match_parent"
+                        style="@style/smallTextView"
+                        android:layout_alignStart="@+id/img_back"
+                        android:paddingStart="@dimen/dime_30dp"
+                        android:paddingTop="17dp"
+                        android:gravity="left"
+                        android:text="@string/the_light_between_oceans"
+                        android:textSize="10sp" />
+
+                    <ImageButton
+                        android:id="@+id/star_movie"
+                        android:layout_width="?actionBarSize"
+                        android:layout_height="?actionBarSize"
+                        android:layout_toStartOf="@+id/share_movie"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/star_movie"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                    <ImageButton
+                        android:id="@+id/share_movie"
+                        android:layout_width="?actionBarSize"
+                        android:layout_height="?actionBarSize"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/share_movie"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/btn_back_movie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?actionBarSize"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/arrow_back" />
+
+                    <TextView
+                        android:id="@+id/txt_back"
+                        style="@style/smallTextView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignStart="@+id/btn_back_movie"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="start"
+                        android:paddingTop="12dp"
+                        android:text="@string/back" />
+
+                    <ImageView
+                        android:id="@+id/img_back"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignStart="@id/btn_back_movie"
+                        android:layout_marginStart="15dp"
+                        android:paddingTop="7dp"
+                        android:src="@drawable/iv_poster" />
+
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_poster"
+                    android:layout_width="@dimen/dime_120dp"
+                    android:layout_height="180dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/iv_poster" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dime_15dp"
+                    android:layout_toEndOf="@+id/iv_poster"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/muli"
+                        android:text="@string/the_light_between_oceans"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_rdate"
+                        style="@style/smallTextView"
+                        android:layout_width="match_parent"
+                        android:text="@string/release_date_15_nov_2017"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/tv_people"
+                        style="@style/smallTextView"
+                        android:gravity="left"
+                        android:layout_width="match_parent"
+                        android:paddingTop="10dp"
+                        android:text="@string/_3_292_people_wathing"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+                    <TextView
+                        android:id="@+id/tv_genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/muli"
+                        android:text="@string/action_adventure_fantasy"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatRatingBar
+                            android:id="@+id/rate"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:progressBackgroundTint="@color/outline"
+                            android:progressTint="@color/colorStar"
+                            android:rating="3" />
+
+                        <TextView
+                            android:id="@+id/tv_number"
+                            style="@style/smallTextView"
+                            android:paddingStart="5dp"
+                            android:text="@string/_5_0_10"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+                        <TextView
+                            android:id="@+id/tv_count"
+                            style="@style/smallTextView"
+                            android:layout_width="match_parent"
+                            android:paddingLeft="5dp"
+                            android:text="@string/_375_votes"
+                            android:gravity="left"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/transparent"
+                            android:textSize="@dimen/dime_10" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli"
+                android:maxLines="4"
+                android:paddingStart="12dp"
+                android:text="@string/fueled_by_his_restored_faith_in_humanity_and_inspired_by_superman_s_selfless_act_bruce_wayne_enlists_the_help_of_his_newfound_ally_diana_prince_to_face_an_even_greater_enemy"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/transparent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dime_15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_cast"
+                        style="@style/smallTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:gravity="start"
+                        android:paddingBottom="@dimen/dime_10"
+                        android:text="@string/full_cast_and_crew"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_cast"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="@color/colorCard"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dime_10"
+                        android:paddingBottom="@dimen/dime_10"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/cast_item" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dime_10" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_reviews"
+                        style="@style/smallTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:paddingStart="12dp"
+                        android:text="@string/reviews_390"
+                        android:textColor="@color/transparent"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_reviews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_reviews"
+                        android:paddingStart="12dp"
+                        android:paddingTop="@dimen/dim_5"
+                        android:paddingBottom="@dimen/dim_5"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/review_item" />
+
+                    <Button
+                        android:id="@+id/btn_login_details"
+                        style="@style/smallTextView"
+                        android:layout_width="300dp"
+                        android:layout_height="52dp"
+                        android:layout_below="@+id/rv_reviews"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="@dimen/dime_10"
+                        android:layout_marginBottom="25dp"
+                        android:background="@drawable/btn_style"
+                        android:gravity="center"
+                        android:text="@string/login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@null" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
