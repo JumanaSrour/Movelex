@@ -4,7 +4,7 @@ Movlix is a sample Android project using The Movie DB API based on MVP architect
 ![smartmockups_kuofwc23](https://user-images.githubusercontent.com/76235584/137013097-8d1c2083-714f-4d9a-94e4-15b7c90bab07.png)
 
 # Features:
-Resgister and signin
+Register and sign in
 
 Profile
 
