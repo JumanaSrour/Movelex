@@ -30,7 +30,7 @@ MVP
 
 Retrofit
 
-Restful API
+RESTful API
 
 CI support (Upcoming)
 
